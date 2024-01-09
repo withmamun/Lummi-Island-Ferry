@@ -1,0 +1,975 @@
+/* Base CSS */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+body {
+    font-family: 'Poppins', sans-serif;
+}
+
+.alignleft {
+    float: left;
+    margin-right: 15px;
+}
+
+.alignright {
+    float: right;
+    margin-left: 15px;
+}
+
+.aligncenter {
+    display: block;
+    margin: 0 auto 15px;
+}
+
+a:focus {
+    outline: 0 solid
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin: 0 0 15px;
+    color: #05271A;
+    font-weight: 700;
+    font-size: 40px;
+}
+
+a {
+    text-decoration: none;
+}
+
+.container,
+.container-lg,
+.container-md,
+.container-sm,
+.container-xl,
+.container-xxl {
+    max-width: 1366px;
+}
+
+
+/*-------------------- Scrollbar area css start --------------------*/
+
+::-webkit-scrollbar {
+    width: 12px;
+    background-color: #ccc;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #DF501A;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background-color: #95310C;
+}
+
+html {
+    scrollbar-color: #DF501A #ccc;
+    scrollbar-width: thin;
+    scroll-behavior: smooth;
+}
+
+/*-------------------- Scrollbar area css end --------------------*/
+
+
+/*-------------------- Selection area css start --------------------*/
+
+::selection {
+    background-color: #ccc;
+    color: #DF501A;
+}
+
+::-webkit-selection {
+    background-color: #ccc;
+    color: #DF501A;
+}
+
+::-moz-selection {
+    background-color: #ccc;
+    color: #DF501A;
+}
+
+::-ms-selection {
+    background-color: #ccc;
+    color: #DF501A;
+}
+
+::-o-selection {
+    background-color: #ccc;
+    color: #DF501A;
+}
+
+/*-------------------- Selection area css end --------------------*/
+
+
+/*-------------------- Offcanvas area css start --------------------*/
+
+.menu-close {
+    font-size: 18px;
+    color: #fff;
+    position: absolute;
+    top: 20px;
+    left: 18px;
+    cursor: pointer;
+    transition: .4s;
+    border: 1px solid #fff;
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.menu-close:hover {
+    color: #fff;
+    background: #DF501A;
+}
+
+.offcanvas-area {
+    position: fixed;
+    left: -100%;
+    height: 100%;
+    width: 318px;
+    background: #05271A;
+    z-index: 8;
+    padding-top: 35px;
+    -webkit-transition: .4s;
+    transition: .4s;
+    visibility: hidden;
+    top: 0;
+    overflow-y: scroll;
+    scrollbar-width: none;
+}
+
+.offcanvas-area.active {
+    left: 0;
+    visibility: visible;
+}
+
+.offcanvas-area .main-menu ul li a {
+    font-size: 18px;
+    color: #fff;
+    display: block;
+    transition: .3s;
+    padding: 16px 22px;
+    border-bottom: 1px solid #fff;
+    text-decoration: none;
+}
+
+.offcanvas-area .main-menu ul li:first-child a {
+    border-top: 1px solid #fff;
+}
+
+.offcanvas-area .main-menu ul li a:hover,
+.offcanvas-area .main-menu ul li a[aria-expanded="true"] {
+    color: #DF501A;
+    padding-left: 27px;
+}
+
+.offcanvas-menu .main-menu ul {
+    display: block;
+    padding-top: 94px;
+    padding-left: 0;
+    margin-bottom: 65px;
+    list-style: none;
+}
+
+.offcanvas-overlay {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background-color: #000;
+    opacity: 0;
+    visibility: hidden;
+    -webkit-transition: .4s;
+    transition: .4s;
+    z-index: 7;
+}
+
+.offcanvas-overlay.active {
+    opacity: .5;
+    visibility: visible;
+}
+
+.menu-open {
+    font-size: 27px;
+    color: #fff;
+    cursor: pointer;
+    position: relative;
+    top: 2px;
+    margin-left: 20px;
+    margin-right: 15px;
+    transition: .3s;
+    display: none;
+    width: 30px;
+    text-align: center;
+}
+
+.menu-open:hover {
+    color: #DF501A;
+}
+
+.offcanvas__contact {
+    display: none;
+}
+
+/*-------------------- Offcanvas area css end --------------------*/
+
+
+/*-------------------- Header area css start --------------------*/
+
+.header__area {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    width: 100%;
+    z-index: 5;
+}
+
+.header__topbar {
+    backdrop-filter: blur(10px);
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 12px 0px;
+}
+
+.header__topbar__content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.header__topbar__contact {
+    display: flex;
+    align-items: center;
+}
+
+.header__topbar__contact a {
+    color: #000000;
+    font-size: 16px;
+    font-weight: 400;
+}
+
+.header__topbar__contact a i {
+    margin-right: 15px;
+}
+
+.header__topbar__contact a:first-child i {
+    transform: rotate(90deg);
+}
+
+.header__topbar__contact a:first-child {
+    padding-right: 36px;
+    margin-right: 26px;
+    border-right: 1px solid #000;
+}
+
+.header__topbar__social {
+    display: flex;
+    align-items: center;
+}
+
+.header__topbar__social a {
+    color: #000;
+    font-size: 18px;
+    margin-left: 20px;
+    transition: .3s;
+}
+
+.header__topbar__social a img {
+    width: 22px;
+    margin-top: -3px;
+}
+
+.header__main__blk {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.header__logo a {
+    color: #fff;
+    font-size: 28px;
+    font-weight: 700;
+    text-transform: capitalize;
+}
+
+.header__wrap {
+    background-color: #05271A;
+    padding: 30px 0px;
+}
+
+.header__menu ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.header__menu ul li {
+    display: inline-block;
+    margin-left: 30px;
+}
+
+.header__menu ul li:first-child {
+    margin-left: 0;
+}
+
+.header__menu ul li a {
+    color: #fff;
+    font-size: 18px;
+    font-weight: 600;
+    text-transform: capitalize;
+    transition: .3s;
+    position: relative;
+    z-index: 1;
+}
+
+.header__menu ul li a::after {
+    position: absolute;
+    left: 0;
+    bottom: -4px;
+    width: 0;
+    height: 1px;
+    content: "";
+    background-color: #fff;
+    z-index: 1;
+    opacity: 0;
+    visibility: hidden;
+    transition: .3s;
+}
+
+.header__menu ul li a:hover::after {
+    visibility: visible;
+    opacity: 1;
+    width: 100%;
+}
+
+.header__topbar .container {
+    max-width: 1640px;
+}
+
+/*-------------------- Header area css end --------------------*/
+
+
+/*-------------------- Hero area css start --------------------*/
+
+.hero__area {
+    padding-top: 320px;
+    padding-bottom: 430px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.hero__main__blk h1 {
+    font-size: 80px;
+    color: #fff;
+    margin-bottom: 15px;
+}
+
+.hero__main__blk p {
+    font-size: 20px;
+    font-weight: 400;
+    color: #fff;
+    margin-bottom: 42px;
+}
+
+.common__btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 205px;
+    height: 63px;
+    background-color: #DF501A;
+    border-radius: 5px;
+    color: #fff;
+    font-size: 18px;
+    font-weight: 600;
+    text-transform: capitalize;
+    transition: .3s;
+}
+
+.common__btn:hover {
+    background-color: #05271A;
+    color: #fff;
+}
+
+/*-------------------- Hero area css end --------------------*/
+
+
+/*-------------------- Feature area css start --------------------*/
+
+.feature__area {
+    margin-top: -150px;
+    padding-bottom: 80px;
+}
+
+.feature__main__blk {
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+    padding: 24px 58px;
+    text-align: center;
+    padding-top: 0 !important;
+}
+
+.feature__main__blk img {
+    width: 190px;
+    margin-top: -100px;
+    margin-bottom: 6px;
+}
+
+.feature__main__blk h4 {
+    margin-bottom: 37px;
+}
+
+.feature__main__blk p {
+    color: #05271A;
+    margin-bottom: 55px;
+}
+
+.feature__main__blk a {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/*-------------------- Feature area css end --------------------*/
+
+
+/*-------------------- Gallery area css start --------------------*/
+
+.gallery__area {
+    padding-bottom: 67px;
+}
+
+.gallery__topbar {
+    margin-bottom: 52px;
+}
+
+.gallery__topbar h2 {
+    margin-bottom: 15px;
+}
+
+.gallery__topbar p {
+    margin-bottom: 0;
+    font-size: 20px;
+    font-weight: 400;
+    color: #242424;
+}
+
+.gallery__main__slider.owl-carousel .owl-stage-outer {
+    margin-right: -2000px;
+}
+
+.owl-dots {
+    display: none;
+}
+
+.owl-nav {
+    position: absolute;
+    right: 0;
+    top: -96px;
+    z-index: 2;
+}
+
+.owl-nav button {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 2px solid #05271A !important;
+    transition: .3s;
+    opacity: .5;
+    color: #05271A !important;
+    font-size: 16px !important;
+}
+
+.owl-nav button:hover {
+    opacity: 1;
+}
+
+.owl-nav button.owl-next {
+    margin-left: 17px;
+    opacity: 1;
+}
+
+.gallery__single__slide {
+    position: relative;
+    z-index: 1;
+    height: 510px;
+    width: 100%;
+    overflow: hidden;
+}
+
+.gallery__single__slide>img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: .3s;
+}
+
+.gallery__single__content {
+    position: absolute;
+    left: 30px;
+    bottom: 30px;
+    z-index: 2;
+}
+
+.gallery__single__content h4 {
+    color: #fff;
+    font-size: 30px;
+    font-weight: 500;
+    margin-bottom: 0;
+}
+
+.gallery__single__slide::after {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    z-index: 1;
+    content: "";
+    background-image: linear-gradient(to top, #000, transparent);
+    width: 100%;
+    height: 45%;
+}
+
+.gallery__single__slide:hover>img {
+    transform: scale(1.1);
+}
+
+/*-------------------- Gallery area css end --------------------*/
+
+
+/*-------------------- Ferry area css start --------------------*/
+
+.ferry__area {
+    padding-bottom: 65px;
+}
+
+.ferry__topbar {
+    margin-bottom: 15px;
+}
+
+.ferry__topbar p {
+    margin-bottom: 0;
+    color: #525252;
+    font-size: 20px;
+    font-weight: 400;
+}
+
+.ferry__content {
+    border: 1px solid #05271A;
+    border-radius: 5px;
+    height: 150px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    padding: 10px;
+    padding-top: 0 !important;
+    margin-top: 80px;
+}
+
+.ferry__content>p {
+    color: #000000;
+    font-size: 20px;
+    font-weight: 400;
+    margin-bottom: 0;
+}
+
+.ferry__content>p span {
+    font-size: 15px;
+    display: block;
+}
+
+.ferry__price {
+    background-color: #05271A;
+    width: 118px;
+    height: 118px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    flex: 0 0 auto;
+    margin-top: -59px;
+    margin-bottom: 16px;
+}
+
+.ferry__price h4 {
+    color: #fff;
+    font-size: 50px;
+    font-weight: 700;
+    margin-bottom: 0;
+    display: flex;
+    align-items: flex-start;
+}
+
+.ferry__price h4 span {
+    font-size: 20px;
+    margin-right: 3px;
+}
+
+.ferry__info {
+    margin-top: 40px;
+}
+
+.ferry__info p {
+    color: #525252;
+    font-size: 18px;
+    font-weight: 400;
+    margin-bottom: 2px;
+}
+
+.ferry__img__blk img {
+    max-width: 949px !important;
+    margin-top: -100px;
+}
+
+/*-------------------- Ferry area css end --------------------*/
+
+
+/*-------------------- Rate area css start --------------------*/
+
+.rate__area {
+    margin-bottom: 56px;
+}
+
+.rate__wrap {
+    background-color: #05271A;
+    padding: 28px 38px;
+}
+
+.rate__main__blk {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.rate__content p {
+    margin-bottom: 0;
+    color: #fff;
+    font-size: 26px;
+    font-weight: 400;
+}
+
+.rate__btn a:hover {
+    background-color: #fff;
+    color: #DF501A;
+}
+
+/*-------------------- Rate area css end --------------------*/
+
+
+/*-------------------- Schedule area css start --------------------*/
+
+.schedule__area {
+    position: relative;
+    z-index: 1;
+}
+
+.schedule__img {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 50%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+}
+
+.schedule__content p {
+    color: #525252;
+    font-size: 18px;
+    font-weight: 400;
+    margin-bottom: 0;
+}
+
+.schedule__content>h2 {
+    margin-bottom: 36px;
+}
+
+.schedule__accordion {
+    margin-top: 50px;
+}
+
+.accordion-button {
+    padding: 24px 33px;
+    font-size: 22px;
+    color: #05271A;
+}
+
+.accordion-item {
+    border: 1px solid #E8E8E8;
+    margin-bottom: 40px;
+}
+
+.accordion-item:first-of-type {
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+}
+
+.accordion-item:last-of-type {
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
+}
+
+.accordion-button:not(.collapsed) {
+    color: #000;
+    background-color: #fff;
+    box-shadow: none;
+}
+
+.accordion-button:not(.collapsed)::after {
+    filter: grayscale(100) !important;
+}
+
+.accordion-button:focus {
+    border-color: #E8E8E8;
+    box-shadow: none;
+}
+
+.schedule__area.schedule2 {
+    margin-top: 60px;
+    margin-bottom: 90px;
+}
+
+.schedule__img.img2 {
+    right: 0 !important;
+    left: auto;
+}
+
+.schedule__content {
+    padding-left: 30px;
+}
+
+.schedule__content.schedule2 {
+    padding-left: 0;
+    padding-right: 30px;
+}
+
+/*-------------------- Schedule area css end --------------------*/
+
+
+/*-------------------- Info area css start --------------------*/
+
+.info__area {
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    height: 980px;
+    position: relative;
+    z-index: 1;
+}
+
+.info__left__blk {
+    position: absolute;
+    left: 0;
+    top: 70px;
+    width: 43%;
+    z-index: 2;
+    backdrop-filter: blur(5px);
+    background-color: rgba(5, 39, 60, 0.4);
+    padding: 50px 80px;
+    min-height: 450px;
+}
+
+.info__left__blk h4 {
+    color: #fff;
+    font-size: 40px;
+    margin-bottom: 35px;
+}
+
+.info__left__blk ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.info__left__blk ul li {
+    display: flex;
+    color: #fff;
+    font-size: 22px;
+    font-weight: 400;
+    margin-bottom: 15px;
+    align-items: flex-start;
+}
+
+.info__left__blk ul li img {
+    flex: 0 0 auto;
+    margin-right: 26px;
+    margin-top: 3px;
+}
+
+.info__left__blk.info__right__blk {
+    left: auto;
+    right: 0;
+}
+
+/*-------------------- Info area css end --------------------*/
+
+
+/*-------------------- Footer area css start --------------------*/
+
+.footer__area {
+    background-color: #05271A;
+    padding-top: 126px;
+    padding-bottom: 15px;
+}
+
+.footer__area .container {
+    max-width: 1640px;
+}
+
+.footer__logo a {
+    color: #fff;
+    font-size: 30px;
+    font-weight: 700;
+    text-transform: capitalize;
+}
+
+.footer__logo {
+    margin-bottom: 18px;
+}
+
+.footer__info p {
+    font-size: 14px;
+    font-weight: 400;
+    color: #fff;
+    margin-bottom: 0;
+}
+
+.footer__info {
+    margin-bottom: 60px;
+    max-width: 85%;
+}
+
+.footer__social__wrap h4 {
+    font-size: 22px;
+    color: #fff;
+    margin-bottom: 5px;
+    text-transform: capitalize;
+}
+
+.footer__social__main {
+    display: flex;
+    align-items: center;
+}
+
+.footer__social__main a {
+    width: 57px;
+    height: 57px;
+    background-color: #0081C6;
+    border-radius: 10px;
+    color: #fff;
+    margin-right: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 27px;
+    transition: .3s;
+}
+
+.footer__social__main a:hover {
+    background-color: #DF501A;
+    color: #fff;
+}
+
+.footer__menu h4 {
+    color: #fff;
+    font-size: 22px;
+    margin-bottom: 18px;
+}
+
+.footer__menu ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.footer__menu ul li {
+    margin-bottom: 15px;
+}
+
+.footer__menu ul li:last-child {
+    margin-bottom: 0;
+}
+
+.footer__menu ul li a {
+    font-size: 18px;
+    font-weight: 400;
+    color: #fff;
+    text-transform: capitalize;
+    transition: .3s;
+}
+
+.footer__menu ul li a:hover {
+    color: #DF501A;
+}
+
+.footer__contact__single {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    margin-bottom: 67px;
+}
+
+.footer__contact__ico {
+    flex: 0 0 auto;
+    margin-right: 20px;
+    max-width: 50px;
+}
+
+.footer__contact__info h4 {
+    font-size: 22px;
+    color: #fff;
+    margin-bottom: 5px;
+}
+
+.footer__contact__info p {
+    font-size: 18px;
+    font-weight: 400;
+    color: #fff;
+    margin-bottom: 0;
+}
+
+.footer__contact__single:last-child {
+    margin-bottom: 0;
+}
+
+/*-------------------- Footer area css end --------------------*/
+
+
+/*-------------------- Copy area css start --------------------*/
+
+.copy__area {
+    background-color: #05271A;
+    border-top: 1px solid #fff;
+    padding-top: 20px;
+    padding-bottom: 40px;
+}
+
+.copy__content {
+    text-align: center;
+}
+
+.copy__content span {
+    font-size: 16px;
+    font-weight: 400;
+    color: #fff;
+}
+
+/*-------------------- Copy area css end --------------------*/
+
+
+/*-------------------- Default area css start --------------------*/
+/*-------------------- Default area css end --------------------*/
